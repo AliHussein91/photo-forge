@@ -1,0 +1,16 @@
+<section class="hero">
+    <p class="hero__title">Image Editing Made Simple    </p>
+    <h1 class="hero__headline">Effortless Image Editing, Right at Your Fingertips</h1>
+    <div class="hero__actions">
+        <button class="hero__action">Try It Now</button>
+        <button class="hero__action">Learn More</button>
+    </div>
+</section>
+<section class="features">
+    @for (feature of features; track $index) {
+        <app-feature-card [feature]="feature" />
+    }
+</section>
+<section class="author">
+
+</section>
