@@ -1,0 +1,15 @@
+footer {
+    @apply bg-blue text-[1.2rem] uppercase text-center text-white py-[2rem] px-[1rem] sm:px-[2rem] flex flex-col lg:flex-row justify-between gap-[2rem];
+    p span {
+        @apply text-pink;
+    }
+    .footer__links {
+        @apply sm:flex justify-center gap-[1rem] uppercase;
+        .footer__link{
+            @apply whitespace-nowrap cursor-pointer;
+            &:hover, &.active {
+                @apply text-pink;
+            }
+        }
+    }
+}
