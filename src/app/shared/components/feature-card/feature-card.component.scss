@@ -1,0 +1,18 @@
+:host {
+    @apply py-[0.5rem] px-[1rem] shadow-lg text-dark;
+    background-color: #1d29390d;
+    display:grid;
+    grid-template-rows: subgrid;
+    justify-items: center;
+    align-items: center;
+    gap: 1rem;
+    .feature__icon {
+        @apply  h-[8rem] mx-auto row-span-1;
+    }
+    .feature__title{
+        @apply text-center font-[700] text-[1.3rem] row-span-1 text-teal;
+    }
+    .feature__description {
+        @apply text-justify row-span-1 max-w-[20rem] font-[500];
+    }
+}

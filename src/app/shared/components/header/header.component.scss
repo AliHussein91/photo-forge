@@ -1,5 +1,5 @@
 .header {
-  @apply py-[1rem] px-[1rem] sm:px-[2rem] shadow-lg uppercase;
+  @apply py-[1rem] px-[1rem] sm:px-[2rem] shadow-lg uppercase ;
   .nav__desktop {
     @apply hidden lg:flex justify-between items-center;
     .nav__logo {
