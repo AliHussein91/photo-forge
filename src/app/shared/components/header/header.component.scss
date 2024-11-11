@@ -1,0 +1,142 @@
+.header {
+  @apply py-[1rem] px-[1rem] sm:px-[2rem] shadow-lg uppercase;
+  .nav__desktop {
+    @apply hidden lg:flex justify-between items-center;
+    .nav__logo {
+      @apply text-[3rem] font-[800] bg-pink bg-clip-text overflow-hidden relative;
+      color: transparent;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        backdrop-filter: brightness(1.5);
+        left: -100%;
+        width: 40px;
+        height: 70px;
+        rotate: 30deg;
+
+        transition: all 0.4s ease;
+      }
+      &:hover {
+        &::before {
+          left: 40%;
+          transition: all 0.4s ease;
+        }
+        &::after {
+          left: 70%;
+          width: 20px;
+          transition: all 0.4s ease;
+        }
+      }
+    }
+    .nav__links {
+      @apply flex gap-[2.5rem] text-[2rem] font-[600] text-dark;
+      .nav__link {
+        @apply relative;
+        &::before {
+          @apply content-[""] absolute left-auto right-0 bottom-0 w-0 bg-pink h-[3px]  transition-all duration-150 ease-in-out;
+        }
+        &:not(.active):hover {
+          @apply text-pink transition-all duration-100 ease-in-out;
+          &::before {
+            @apply content-[""] absolute left-0 right-auto bottom-0 w-full bg-pink h-[3px]  transition-all duration-150 ease-in-out;
+          }
+        }
+      }
+    }
+    .btn {
+      position: relative;
+      display: inline-block;
+      padding: 8px 30px;
+      font-size: 1rem;
+      letter-spacing: 2px;
+      border-radius: 50px;
+      outline: none;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      box-sizing: border-box;
+      &--liquidBtn {
+        overflow: hidden;
+        span {
+          position: relative;
+          z-index: 1;
+          color: var(--white);
+          font-weight: 500;
+        }
+        &:hover div {
+          top: -120px;
+        }
+        div {
+          position: absolute;
+          top: -80px;
+          left: 0;
+          width: 200px;
+          height: 200px;
+          background: var(--pink);
+          box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+          transition: 0.5s;
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 200%;
+            height: 200%;
+            transform: translate(-50%, -75%);
+          }
+          &::before {
+            border-radius: 45%;
+            background: rgba(20, 20, 20, 1);
+            animation: liquidAnimation 10s linear infinite;
+          }
+          &::after {
+            border-radius: 40%;
+            background: rgba(20, 20, 20, 0.5);
+            animation: liquidAnimation 10s linear infinite;
+          }
+          @keyframes liquidAnimation {
+            0% {
+              transform: translate(-50%, -75%) rotate(0deg);
+            }
+            100% {
+              transform: translate(-50%, -75%) rotate(360deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .nav__mobile {
+    @apply flex justify-between items-center lg:hidden;
+    .nav__logo {
+      @apply text-pink text-[2rem] font-[600];
+    }
+    .nav__menu__btn {
+      svg {
+        @apply w-[40px] h-[40px] stroke-pink;
+      }
+    }
+    .nav__mobile__nav {
+      @apply absolute top-0 bottom-0 -right-full  transition-all duration-300 ease-in-out bg-blue font-[500] text-center w-full sm:w-[320px] text-white text-[1.5rem];
+      &.open {
+        @apply right-0  transition-all duration-300 ease-in-out;
+      }
+      .close {
+        @apply absolute top-5 right-5;
+      }
+      .nav__links {
+        @apply flex flex-col justify-center gap-[3rem] items-center h-full;
+        .nav__link:hover {
+          @apply text-pink;
+        }
+      }
+    }
+  }
+
+  .active {
+    @apply text-pink cursor-default;
+  }
+}

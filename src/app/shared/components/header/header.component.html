@@ -1,1 +1,45 @@
-<p>header works!</p>
+<header class="header">
+  <nav class="nav__desktop">
+    <a class="nav__logo" routerLink="/">Photo Forge</a>
+    <ul class="nav__links">
+      <li ><a class="nav__link" routerLink="/resize" routerLinkActive="active">Resize</a></li>
+      <li ><a class="nav__link" routerLink="/crop" routerLinkActive="active">Crop</a></li>
+      <li ><a class="nav__link" routerLink="/compress" routerLinkActive="active">Compress</a></li>
+      <li ><a class="nav__link" routerLink="/more" routerLinkActive="active">More</a></li>
+    </ul>
+    <!-- <button class="btn btn--liquidBtn">
+            <span>Hire Me</span>
+            <div class="btn--liquidBtn--liquid" ></div>
+          </button> -->
+  </nav>
+  <div class="nav__mobile">
+    <a routerLink="/" class="nav__logo">Photo Forge</a>
+    <button class="nav__menu__btn" (click)="open()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        class="size-6"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        />
+      </svg>
+    </button>
+    <nav class="nav__mobile__nav" #mobileMenu>
+        <button class="close" (click)="close()"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+          </button>
+        <ul class="nav__links">
+            <li ><a class="nav__link" routerLink="/resize" routerLinkActive="active">Resize</a></li>
+            <li ><a class="nav__link" routerLink="/crop" routerLinkActive="active">Crop</a></li>
+            <li ><a class="nav__link" routerLink="/compress" routerLinkActive="active">Compress</a></li>
+            <li ><a class="nav__link" routerLink="/more" routerLinkActive="active">More</a></li>
+        </ul>
+    </nav>
+  </div>
+</header>
